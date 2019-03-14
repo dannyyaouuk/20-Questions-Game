@@ -6,7 +6,7 @@ class MainComponent extends Component {
   render() {
     return (
 			<div className="logo-container">
-        <img src={Logo} className="logo"/>
+        <img src={Logo} alt="logo" className="logo"/>
       </div>
     );
   }

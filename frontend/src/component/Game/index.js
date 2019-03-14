@@ -15,17 +15,33 @@ class Game extends Component {
     super(props);
     this.state = {
       user:this.props.user,
-      mode: "ask"
+      mode: "ask",
+      encounterData:{
+        name: "",
+        image: ""
+      }
     }
   }
   componentDidMount = ()=>{
-    console.log("trigger");
+    this.getUserdataOfTheOtherUser()
   }
   componentWillMount = ()=>{
     this.checkIfReachMaxQuestion()
   }
   componentDidUpdate = ()=>{
     this.checkIfReachMaxQuestion()
+  }
+  getUserdataOfTheOtherUser = ()=>{
+    var encounterId
+    if (this.iAmHinter()) {
+      encounterId = this.props.game.guesser;
+    }else{
+      encounterId = this.props.game.hinter;
+    }
+    axios.get(this.props.apiUrl + '/user/' + encounterId)
+    .then((response)=>{
+      this.setState({encounterData: response.data.user})
+    })
   }
   checkIfReachMaxQuestion = ()=>{
     if (this.props.game.questions.length >= maxQuestion && this.props.game.questionStatus === 0 && this.state.mode === 'ask') {

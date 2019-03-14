@@ -54,71 +54,71 @@
 }
 
 .game-container {
-    min-width: 80%;
-    background: #fff;
-    height: 45vw;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
+  min-width: 80%;
+  background: #fff;
+  height: 45vw;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
 }
 
 button.main-btn.game {
-    margin: 10px;
-    width: 5em;
+  margin: 10px;
+  width: 5em;
 }
 
 button.main-btn.game.possitive {
-    background: #d7fad7;
+  background: #d7fad7;
 }
 
 button.main-btn.game.negetive {
-    background: #fccece;
+  background: #fccece;
 }
 
 input.main-input {
-    width: 10em;
-    height: 2em;
-    margin: 20px 0;
-    border-radius: 10px;
-    border: 0;
-    font-size: 1.5em;
-    text-align: center;
-    padding: 0;
-    font-family: 'Sniglet', cursive;
-    outline: none;
-    color: #2f3747;
+  width: 10em;
+  height: 2em;
+  margin: 20px 0;
+  border-radius: 10px;
+  border: 0;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 0;
+  font-family: 'Sniglet', cursive;
+  outline: none;
+  color: #2f3747;
 }
 
 .game-question-history-container {
-    text-align: left;
-    margin: 0px;
+  text-align: left;
+  margin: 0px;
 }
 .game-question-history-title {
-    display: inline-block;
-    margin: 13px;
+  display: inline-block;
+  margin: 13px;
 }
 .game-question-history-answer {
-    display: inline-block;
-    margin-left: 20px;
-    padding: 5px 10px;
-    border-radius: 10px;
-    margin: 13px;
+  display: inline-block;
+  margin-left: 20px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 13px;
 }
 .game-question-history-answer.positive {
-    background: green;
+  background: green;
 }
 .game-question-history-answer.negetive {
-    background: red;
+  background: red;
 }
 input.main-input.game-question-input {
-    font-size: 1em;
-    height: 3em;
-    width: 30em;
+  font-size: 1em;
+  height: 3em;
+  width: 30em;
 }
 .game-component-container {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 .game-question-title {
   margin-top: 150px;
@@ -135,6 +135,20 @@ input.main-input.game-question-input {
 }
 .register-logo{
   width: 100px;
+}
+.game-charactor {
+  background: transparent;
+  border: 0;
+  margin: 10px;
+  outline: none;
+  border-radius: 20px;
+}
+.game-charactor.selected {
+  border: 5px solid #fff;
+}
+.game-charactor-image{
+  width: 60px;
+  outline: none;
 }
 
 @keyframes App-logo-spin {

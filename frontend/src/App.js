@@ -9,6 +9,12 @@ import WaitingForJoin from './component/WaitingForJoin';
 import OpenGame from './component/OpenGame';
 import LogoBar from './component/LogoBar';
 import io from 'socket.io-client';
+const charactors = [
+  require("./images/c1.png"),
+  require("./images/c2.png"),
+  require("./images/c3.png"),
+  require("./images/c4.png")
+];
 
 const apiUrl = "http://localhost:6200";
 const userStorageKey = "user_20qgame";
@@ -51,12 +57,13 @@ class App extends Component {
     if (userDataInLocationStorage) {
       var user = JSON.parse(userDataInLocationStorage);
       console.log(apiUrl + "/user/"+user._id);
+      var userData;
       axios.get(apiUrl + "/user/"+user._id)
       .then( (response) => {
         if(!response.data.user){
           this.setState({stage: 0});
         }else if(response.data.user.inGame){
-          var userData = response.data.user;
+          userData = response.data.user;
           axios.get(apiUrl + "/game/"+userData.gameId)
           .then( (response)=>{
             this.state.socket.emit("join", {game: response.data.game._id})
@@ -71,7 +78,7 @@ class App extends Component {
             console.log(error);
           });
         }else{
-          var userData = response.data.user;
+          userData = response.data.user;
           this.setUserData(userData)
         }
       })
@@ -146,6 +153,7 @@ class App extends Component {
           <Register 
             finishRegister={this.setUserData}
             apiUrl={apiUrl}
+            charactors={charactors}
           />
          )
         break;
