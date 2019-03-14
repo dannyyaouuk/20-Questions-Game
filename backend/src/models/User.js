@@ -14,6 +14,9 @@ var User = new Schema({
   },
   gameId: {
     type: String
+  },
+  charactor:{
+    type: Number
   }
 },{
     collection: 'User'

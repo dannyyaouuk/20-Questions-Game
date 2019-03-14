@@ -10,8 +10,14 @@ class MainComponent extends Component {
   }
   render() {
     return (
-			<div style={{margin: "30px"}}>
-        <button onClick={this.leaveGame} className="main-btn">Leave Game</button>
+			<div 
+        style={{margin: "30px"}}>
+        <button 
+          onClick={this.leaveGame} 
+          className="main-btn"
+        >
+          Leave Game
+        </button>
       </div>
     );
   }

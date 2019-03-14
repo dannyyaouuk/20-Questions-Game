@@ -7,12 +7,14 @@ var User = require('../models/User');
 // create a new user
 router.post('/', function (req, res) {
   var name = req.body.name;
+  var charactor = req.body.charactor;
   var _id = ObjectID();
   var newUser = new User({
     _id: _id,
     name: name,
     inGame: false,
-    gameId: "not_set"
+    gameId: "not_set",
+    charactor: charactor
   });
   newUser.save(function(error, user){
     return res.send({

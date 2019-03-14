@@ -1,3 +1,6 @@
+body{
+  margin: 0px;
+}
 .App {
   text-align: center;
   font-family: 'Sniglet', cursive;
@@ -31,6 +34,9 @@
 .App-subtitle{
   font-size: 1.2em;
   margin: 10px 0;
+}
+.withMargin.App-subtitle{
+  margin: 10px;
 }
 
 .main-btn {
@@ -150,6 +156,17 @@ input.main-input.game-question-input {
   width: 60px;
   outline: none;
 }
+.game-charactor-image{
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  position: relative;
+}
+.game-charactors-container{
+  display: flex;
+}
+
+
 
 @keyframes App-logo-spin {
   from {

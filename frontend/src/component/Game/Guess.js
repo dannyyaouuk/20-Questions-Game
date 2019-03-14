@@ -10,8 +10,12 @@ class MainComponent extends Component {
 	}
   render() {
     return (
-    	<div className="game-component-container">
-        <p className="App-subtitle">
+    	<div 
+        className="game-component-container"
+      >
+        <p 
+          className="App-subtitle"
+        >
           Guess the answer
         </p>
         <input 
@@ -22,11 +26,18 @@ class MainComponent extends Component {
             this.setState({guess: event.target.value})
           }} 
         />
-        <button onClick={()=>this.props.guessAnswer(this.state.guess)} className="main-btn">
+        <button 
+          onClick={()=>this.props.guessAnswer(this.state.guess)}
+          className="main-btn"
+        >
           Guess
         </button>
         <br/>
-        {this.props.canGoGoBackToAsk?<button onClick={this.props.backToAsk} className="main-btn">
+        {this.props.canGoGoBackToAsk?
+          <button 
+            onClick={this.props.backToAsk}
+            className="main-btn"
+          >
           Back to Ask
         </button>:null}
         <br/><br/>

@@ -5,7 +5,7 @@ class MainComponent extends Component {
 	constructor(props) {
 	  super(props);
 	  this.state = {
-	  	answer:"Join"
+	  	answer:""
 	  };
 	}
 	pressStart = ()=>{
@@ -17,19 +17,27 @@ class MainComponent extends Component {
 	}
   render() {
     return (
-			<header className="App-header">
-			  <p className="App-title">
+			<header 
+				className="App-header"
+			>
+			  <p 
+			  	className="App-title"
+			  >
 			    Please set up the word to guess
 			  </p>
 			  <input 
-			    type="text" 
+			    type="text"
+			    placeholder="word to guess"
 			    className="main-input" 
 			    value={this.state.answer} 
 			    onChange={(event)=>{
 			      this.setState({answer: event.target.value})
 			    }} 
 			  />
-			  <button onClick={this.pressStart} className="main-btn">
+			  <button 
+			  	onClick={this.pressStart} 
+			  	className="main-btn"
+			  >
 			    START
 			  </button>
 			</header>

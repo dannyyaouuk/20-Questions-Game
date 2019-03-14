@@ -10,8 +10,12 @@ class MainComponent extends Component {
 	}
   render() {
     return (
-    	<div className="game-component-container">
-        <p className="App-subtitle">
+    	<div 
+        className="game-component-container"
+      >
+        <p 
+          className="App-subtitle"
+        >
           Wait for the other player to make next move..
         </p>
       </div>

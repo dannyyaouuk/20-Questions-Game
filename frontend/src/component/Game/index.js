@@ -40,7 +40,11 @@ class Game extends Component {
     }
     axios.get(this.props.apiUrl + '/user/' + encounterId)
     .then((response)=>{
+      console.log(response);
       this.setState({encounterData: response.data.user})
+    })
+    .catch((error)=>{
+      console.log(error)
     })
   }
   checkIfReachMaxQuestion = ()=>{
@@ -86,7 +90,36 @@ class Game extends Component {
   render() {
     var questions = this.props.game.questions;
     return (
-      <header className="App-header">
+      <header 
+        className="App-header"
+      >
+        <div 
+          className="game-charactors-container">
+
+          <p 
+            className="App-subtitle withMargin"
+          >
+            {this.state.encounterData.name}
+          </p>
+          <img
+            src={this.props.charactors[this.state.encounterData.charactor]}
+            className="game-charactor-image"
+          />
+          <p 
+            className="App-subtitle withMargin"
+          >
+            V.S.
+          </p>
+          <p 
+            className="App-subtitle withMargin"
+          >
+            {this.state.user.name}
+          </p>
+          <img
+            src={this.props.charactors[this.state.user.charactor]}
+            className="game-charactor-image"
+          />
+        </div>
         {this.props.game.gameStatus === 1?
           <div>
             {this.iAmHinter() && !this.isQuestioning()?
@@ -128,7 +161,9 @@ class Game extends Component {
             gameStatus={this.props.game.gameStatus}
           />
         :null}
-        <LeaveGame leaveGame={this.props.leaveGame}/>
+        <LeaveGame 
+          leaveGame={this.props.leaveGame}/
+        >
       </header>
     );
   }
